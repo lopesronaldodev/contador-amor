@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ronaldo ❤️ Juliana</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Great Vibes', cursive;
+      color: #fff;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 {
+      font-size: 4em;
+      margin-bottom: 0.5em;
+      text-shadow: 2px 2px 4px #000;
+    }
+    .contador {
+      font-size: 2em;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1em 2em;
+      border-radius: 10px;
+      text-shadow: 1px 1px 2px #000;
+    }
+    .coracoes {
+      font-size: 2em;
+      margin-top: 1em;
+      text-shadow: 1px 1px 2px #000;
+    }
+    .player-container {
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    iframe.audio {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+    iframe.video {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ronaldo ❤️ Juliana</h1>
+  <div class="contador" id="contador">
+    Calculando o tempo de amor...
+  </div>
+  <div class="coracoes">❤️ 💖 💕 💘 💞</div>
+
+  <!-- Música de fundo em YouTube (silenciada) -->
+  <iframe class="video" src="https://www.youtube.com/embed/GPXiL6ynVG8?autoplay=1&loop=1&playlist=GPXiL6ynVG8" allow="autoplay"></iframe>
+
+  <!-- Player de música no rodapé -->
+  <div class="player-container">
+    <iframe class="audio" src="https://audiomack.com/embed/rufus-du-sol/album/bloom" scrolling="no" title="Bloom"></iframe>
+  </div>
+
+  <script>
+    function atualizarContador() {
+      const inicio = new Date('2025-02-22T00:00:00');
+      const agora = new Date();
+      const diff = agora - inicio;
+
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diff / (1000 * 60)) % 60);
+      const segundos = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('contador').textContent =
+        `${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos juntos 💖`;
+    }
+
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+  </script>
+</body>
+</html>
